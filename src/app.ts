@@ -4,33 +4,23 @@ import morgan from 'morgan'
 import { config } from 'dotenv'
 
 import routes from './routes'
-
-import mongoose from 'mongoose'
+import '@/database'
 
 class App {
     public express: express.Application
 
     public constructor () {
       this.express = express()
+      this.middlewares()
+      this.routes()
 
       config()
-
-      this.middlewares()
-      this.database()
-      this.routes()
     }
 
     private middlewares (): void {
       this.express.use(express.json())
       this.express.use(morgan(`${process.env.MORGAN_TYPE}`))
       this.express.use(cors())
-    }
-
-    private database (): void {
-      mongoose.connect(`mongodb://${process.env.MONGO_HOST}:${process.env.MONGO_PORT}/${process.env.MONGO_DB_NAME}`, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true
-      })
     }
 
     private routes (): void {
