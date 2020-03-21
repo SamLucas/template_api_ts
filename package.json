@@ -1,4 +1,20 @@
 {
+  "name": "template_api_ts",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/SamLucas/template_api_ts.git",
+  "author": "OS4muk4 <samuellucas0603@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon src/server.ts",
+    "build": "sucrase ./src -d ./dist -t typescript,imports",
+    "start": "node -r ./convertPath.js dist/server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.5"
+  },
   "devDependencies": {
     "@types/cors": "^2.8.6",
     "@types/express": "^4.17.3",
@@ -17,20 +33,5 @@
     "prettier": "^1.19.1",
     "sucrase": "^3.12.1",
     "typescript": "^3.8.3"
-  },
-  "scripts": {
-    "dev": "nodemon src/server.ts",
-    "build": "sucrase ./src -d ./dist --transforms typescript,imports"
-  },
-  "name": "template_api_ts",
-  "version": "1.0.0",
-  "main": "index.js",
-  "repository": "https://github.com/SamLucas/template_api_ts.git",
-  "author": "OS4muk4 <samuellucas0603@gmail.com>",
-  "license": "MIT",
-  "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^4.17.1",
-    "mongoose": "^5.9.5"
   }
 }
