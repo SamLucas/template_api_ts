@@ -10,6 +10,9 @@ class UserController {
 
   public async store (req: Request, res: Response): Promise<Response> {
     const users = await User.create(req.body)
+
+    console.log(users.fullName())
+
     return res.json(users)
   }
 }
