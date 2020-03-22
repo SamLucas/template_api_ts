@@ -14,6 +14,7 @@ createConnection().then(async connection => {
     const app: express.Application = express();
     
     app.use(bodyParser.json());
+    app.use(morgan(`${process.env.MORGAN_TYPE}`))
 
     // register express routes from defined application routes
     Routes.forEach(route => {
@@ -27,8 +28,6 @@ createConnection().then(async connection => {
             }
         });
     });
-
-    app.use(morgan(`${process.env.MORGAN_TYPE}`))
     
     app.listen(3000);
 
