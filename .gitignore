@@ -1,9 +1,4 @@
-node_mod\ules
-.vscode/
-build/
-.idea/
-temp/
-tmp/
+node_modules
 
 yarn-error.log
 yarn.lock
