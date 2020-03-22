@@ -4,7 +4,6 @@ import "reflect-metadata";
 import * as bodyParser from "body-parser";
 
 import express, {Request, Response}  from 'express';
-import {User} from "./entity/User";
 import {Routes} from "./routes";
 import morgan from 'morgan'
 
