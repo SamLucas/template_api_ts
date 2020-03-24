@@ -2,6 +2,8 @@ import express from 'express'
 import cors from 'cors'
 import morgan from 'morgan'
 
+import { Routes} from './routes'
+
 class App {
     public express: express.Application
 
@@ -22,6 +24,7 @@ class App {
     }
 
     private routes (): void {
+      this.express.use(Routes)
     }
 }
 
