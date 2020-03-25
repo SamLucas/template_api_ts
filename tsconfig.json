@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "allowJs": true,
+    "allowJs": false,
     "rootDir": "./src",
     "strict": true,
     "strictPropertyInitialization": false,
